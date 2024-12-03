@@ -7,14 +7,17 @@ WORKDIR /app
 # Copia los archivos de dependencias
 COPY package*.json ./
 
-# Instala las dependencias
-RUN npm install
+# Instala las dependencias y serve globalmente
+RUN npm install && npm install -g serve
 
 # Copia el resto de los archivos del proyecto
 COPY . .
 
-# Expone el puerto 3000
+# Construye la aplicación
+RUN npm run build
+
+# Expone el puerto 3001
 EXPOSE 3001
 
-# Comando para iniciar la aplicación
-CMD ["npm", "start"]
+# Servimos la aplicación usando la ruta completa a serve
+CMD ["npx", "serve", "-s", "build", "-l", "3001"]
