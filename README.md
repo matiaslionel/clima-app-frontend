@@ -15,7 +15,7 @@ Sigue estos pasos para construir y ejecutar la aplicación utilizando Docker:
    Clona este repositorio en tu máquina local:
 
    ```bash
-   git clone <URL_DEL_REPOSITORIO>
+   git clone https://github.com/matiaslionel/clima-app-frontend.git
    cd clima-app-frontend
    ```
 
