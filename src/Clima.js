@@ -25,7 +25,6 @@ ChartJS.register(
 );
 
 const DayContainer = styled.div`
-  width: 800px;
   min-height: 235px;
   position: relative;
   padding: 25px;
@@ -185,18 +184,29 @@ const CardContent = styled.div`
   display: flex;
   justify-content: space-between;
   margin-bottom: 20px;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    align-items: center;
+  }
 `;
 
 const WeatherInfo = styled.div`
   position: relative;
-  width: 350px;
+  width: 280px;
   height: 235px;
 `;
 
 const ChartSection = styled.div`
-  flex-grow: 1;
   margin-left: 20px;
   height: 235px;
+  width: 280px;
+  flex-grow: 0;
+
+  @media (max-width: 768px) {
+    margin-left: 0;
+    margin-top: 20px;
+  }
 `;
 
 const TemperatureStats = styled.div`
